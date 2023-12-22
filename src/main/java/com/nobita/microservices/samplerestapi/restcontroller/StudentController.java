@@ -19,7 +19,7 @@ public class StudentController {
     private final StudentService service;
 
     @Value("${sm://secret-message}")
-    private String message;
+    String message;
 
     public StudentController(StudentService service) {
         this.service = service;
