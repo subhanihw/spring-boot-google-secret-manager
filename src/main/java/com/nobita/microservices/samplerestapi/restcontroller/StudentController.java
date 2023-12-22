@@ -18,7 +18,7 @@ import java.util.Optional;
 public class StudentController {
     private final StudentService service;
 
-    @Value("${sm://secret-message}")
+    @Value("${secret}")
     String message;
 
     public StudentController(StudentService service) {
