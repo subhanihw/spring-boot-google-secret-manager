@@ -1,37 +1,42 @@
 package com.nobita.microservices.samplerestapi.services;
 
+import com.nobita.microservices.samplerestapi.StudentRepository;
 import com.nobita.microservices.samplerestapi.model.Student;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 
 @Service
+@RequiredArgsConstructor
 public class StudentService {
-    private static List<Student> STUDENT_LIST = new ArrayList<>();
-    static {
-        STUDENT_LIST.add(new Student(1, "Naruto", "CSE"));
-        STUDENT_LIST.add(new Student(2, "Nobita", "CSE"));
-        STUDENT_LIST.add(new Student(3, "Kakashi", "ECE"));
-        STUDENT_LIST.add(new Student(4, "Sasuke", "ECE"));
-    }
+//    private static List<Student> STUDENT_LIST = new ArrayList<>();
+//    static {
+//        STUDENT_LIST.add(new Student(1, "Naruto", "CSE"));
+//        STUDENT_LIST.add(new Student(2, "Nobita", "CSE"));
+//        STUDENT_LIST.add(new Student(3, "Kakashi", "ECE"));
+//        STUDENT_LIST.add(new Student(4, "Sasuke", "ECE"));
+//    }
+
+    private final StudentRepository studentRepository;
+
     public List<Student> getAllStudents() {
-        return STUDENT_LIST;
+        return studentRepository.findAll();
     }
 
     public Optional<Student> getStudentById(int id) {
-        return STUDENT_LIST.stream().filter(student -> student.getId()==id).findFirst();
+        return studentRepository.findById(id);
     }
 
     public Student addStudent(Student student) {
-        student.setId(STUDENT_LIST.size()+1);
-        STUDENT_LIST.add(student);
-        return student;
+        return studentRepository.save(student);
     }
 
     public void deleteStudentById(int id) {
-        STUDENT_LIST.removeIf(student -> student.getId() == id);
+        if (getStudentById(id).isEmpty())
+            return;
+        studentRepository.delete(getStudentById(id).get());
     }
 }
