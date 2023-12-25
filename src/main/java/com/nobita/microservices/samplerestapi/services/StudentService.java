@@ -10,7 +10,6 @@ import java.util.Optional;
 
 
 @Service
-@RequiredArgsConstructor
 public class StudentService {
 //    private static List<Student> STUDENT_LIST = new ArrayList<>();
 //    static {
@@ -21,6 +20,10 @@ public class StudentService {
 //    }
 
     private final StudentRepository studentRepository;
+
+    public StudentService(StudentRepository studentRepository) {
+        this.studentRepository = studentRepository;
+    }
 
     public List<Student> getAllStudents() {
         return studentRepository.findAll();
