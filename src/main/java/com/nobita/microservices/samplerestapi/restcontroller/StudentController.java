@@ -24,7 +24,7 @@ public class StudentController {
 
     @GetMapping("/")
     public List<Student> getAllStudent() {
-        return (List<Student>) service.getAllStudents();
+        return service.getAllStudents();
     }
 
     @GetMapping("/{id}")
