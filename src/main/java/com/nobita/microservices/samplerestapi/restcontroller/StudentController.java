@@ -18,24 +18,16 @@ import java.util.Optional;
 public class StudentController {
     private final StudentService service;
 
-    @Value("${secret}")
-    String message;
-
     public StudentController(StudentService service) {
         this.service = service;
     }
 
-    @GetMapping("/secret")
-    public String getMessage() {
-        return message;
-    }
-
-    @GetMapping("v1/students")
+    @GetMapping("/")
     public List<Student> getAllStudent() {
         return (List<Student>) service.getAllStudents();
     }
 
-    @GetMapping("v1/students/{id}")
+    @GetMapping("/{id}")
     public Student getStudentById(@PathVariable int id) {
         Optional<Student> res = service.getStudentById(id);
         if (res.isEmpty()) {
@@ -46,7 +38,7 @@ public class StudentController {
             return res.get();
     }
 
-    @PostMapping("v1/students")
+    @PostMapping("/")
     public ResponseEntity<Student> addStudent(@Valid @RequestBody AddStudentDTO student) {
         Student student1 = new Student();
         student1.setBranch(student.getBranch());
@@ -60,7 +52,7 @@ public class StudentController {
         return ResponseEntity.created(location).build();
     }
 
-    @DeleteMapping("v1/students/{id}")
+    @DeleteMapping("/{id}")
     public void deleteStudentById(@PathVariable int id) {
         Optional<Student> res = service.getStudentById(id);
         if (res.isEmpty()) {
