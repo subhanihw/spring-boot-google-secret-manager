@@ -5,7 +5,6 @@ import com.nobita.microservices.samplerestapi.model.Student;
 import com.nobita.microservices.samplerestapi.model.dto.AddStudentDTO;
 import com.nobita.microservices.samplerestapi.services.StudentService;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
