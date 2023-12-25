@@ -1,6 +1,6 @@
 package com.nobita.microservices.samplerestapi.services;
 
-import com.nobita.microservices.samplerestapi.StudentRepository;
+import com.nobita.microservices.samplerestapi.repository.StudentRepository;
 import com.nobita.microservices.samplerestapi.model.Student;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
