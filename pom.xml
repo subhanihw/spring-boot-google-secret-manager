@@ -43,11 +43,11 @@
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
-        <dependency>
-            <groupId>com.google.cloud</groupId>
-            <artifactId>spring-cloud-gcp-starter-secretmanager</artifactId>
-            <version>4.5.1</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.google.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-gcp-starter-secretmanager</artifactId>-->
+<!--            <version>4.5.1</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -64,6 +64,17 @@
             <version>3.0.2</version>
         </dependency>
     </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <build>
         <plugins>
             <plugin>

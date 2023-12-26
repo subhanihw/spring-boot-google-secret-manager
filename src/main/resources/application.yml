@@ -7,17 +7,15 @@ spring:
         database-name: students
         instance-connection-name: nobita-gcp-project:us-central1:students-postgresql-instance
       project-id: nobita-gcp-project
-      credentials:
-        location: C:\Users\SAILS-DM273\Desktop\nobita-gcp-project-5ef3a255096a.json
   datasource:
     password: students-instance-password
-  config:
-    import: "sm://"
+    username: postgres
   jpa:
+    database: POSTGRESQL
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
     generate-ddl: true
-  sql:
-    init:
-      mode: always
 
 server:
   servlet:

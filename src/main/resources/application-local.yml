@@ -1,0 +1,5 @@
+spring:
+  cloud:
+    gcp:
+      credentials:
+        location: file:C:\Users\SAILS-DM273\Desktop\nobita-gcp-project-b6638e300d97.json
