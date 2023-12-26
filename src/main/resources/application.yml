@@ -9,6 +9,7 @@ spring:
   config:
     import: "sm://"
   datasource:
+    url: jdbc:postgresql:///postgres
     username: ${sm://postgres-username}
     password: ${sm://postgres-password}
     driver-class-name: org.postgresql.Driver
