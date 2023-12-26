@@ -11,6 +11,7 @@ spring:
   datasource:
     username: ${sm://postgres-username}
     password: ${sm://postgres-password}
+    driver-class-name: org.postgresql.Driver
   jpa:
     database: POSTGRESQL
     properties:
