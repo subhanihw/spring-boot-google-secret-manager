@@ -18,6 +18,7 @@ spring:
         default_schema: ${db.schema}
     hibernate:
       ddl-auto: create
+    generate-ddl: true
 
 db:
   schema : student
