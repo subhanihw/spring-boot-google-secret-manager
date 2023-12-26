@@ -6,9 +6,10 @@ spring:
   config:
     import: "sm://"
   datasource:
-    url: jdbc:postgresql://35.226.53.175
+    url: jdbc:postgresql://35.226.53.175/students
     username: postgres
     password: students-instance-password
+    driver-class-name: org.postgresql.Driver
   jpa:
     database: POSTGRESQL
     properties:
