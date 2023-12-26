@@ -13,6 +13,8 @@ spring:
     password: students-instance-password
   config:
     import: "sm://"
+  jpa:
+    generate-ddl: true
   sql:
     init:
       mode: always
