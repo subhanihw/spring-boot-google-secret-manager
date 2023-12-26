@@ -16,6 +16,8 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         default_schema: ${db.schema}
+    hibernate:
+      ddl-auto: update
 
 db:
   schema : student
