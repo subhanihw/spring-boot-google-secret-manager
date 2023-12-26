@@ -10,6 +10,7 @@ spring:
     import: "sm://"
   datasource:
     driver-class-name: org.postgresql.Driver
+    url: jdbc::postgresql:///postgres
     username: ${sm://postgres-username}
     password: ${sm://postgres-password}
   jpa:
