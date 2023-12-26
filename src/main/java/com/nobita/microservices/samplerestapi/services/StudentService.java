@@ -2,6 +2,7 @@ package com.nobita.microservices.samplerestapi.services;
 
 import com.nobita.microservices.samplerestapi.repository.StudentRepository;
 import com.nobita.microservices.samplerestapi.model.Student;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,16 +10,13 @@ import java.util.Optional;
 
 
 @Service
+@RequiredArgsConstructor
 public class StudentService {
 
     private final StudentRepository studentRepository;
 
-    public StudentService(StudentRepository studentRepository) {
-        this.studentRepository = studentRepository;
-    }
-
     public List<Student> getAllStudents() {
-        return studentRepository.findAll();
+        return (List<Student>) studentRepository.findAll();
     }
 
     public Optional<Student> getStudentById(int id) {
