@@ -9,7 +9,6 @@ spring:
     url: jdbc:postgresql://35.226.53.175
     username: postgres
     password: students-instance-password
-    driver-class-name: org.postgresql.Driver
   jpa:
     database: POSTGRESQL
     properties:
