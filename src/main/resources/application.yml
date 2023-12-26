@@ -7,7 +7,7 @@ spring:
     import: "sm://"
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql::///students
+    url: jdbc:postgresql:///students
     username: ${sm://postgres-username}
     password: ${sm://postgres-password}
     hikari:
