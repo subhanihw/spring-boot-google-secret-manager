@@ -3,13 +3,10 @@ spring:
     gcp:
       config:
         enabled: true
-      sql:
-        instance-connection-name: nobita-gcp-project:us-central1:students-postgresql-instance
-        database-name: students
   config:
     import: "sm://"
   datasource:
-    url: jdbc:postgresql:///postgres
+    url: jdbc:postgresql://35.226.53.175:5432/students
     username: ${sm://postgres-username}
     password: ${sm://postgres-password}
     driver-class-name: org.postgresql.Driver
