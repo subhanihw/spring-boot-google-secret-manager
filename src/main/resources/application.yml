@@ -3,20 +3,17 @@ spring:
     gcp:
       config:
         enabled: true
+      sql:
+        instance-connection-name: nobita-gcp-project:us-central1:students-postgresql-instance
+        database-name: students
   config:
     import: "sm://"
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql:///students
     username: ${sm://postgres-username}
     password: ${sm://postgres-password}
-    hikari:
-      data-source-properties:
-        socketFactory: com.google.cloud.sql.postgres.SocketFactory
-        cloudSqlInstance: nobita-gcp-project:us-central1:students-postgresql-instance
   jpa:
-    hibernate:
-      ddl-auto: update
+    database: POSTGRESQL
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
