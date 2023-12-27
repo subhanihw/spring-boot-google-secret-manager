@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    gcp:
+      secretmanager:
+        enabled: true
+        project-id: nobita-gcp-project
+        secret-name-prefix: sm://

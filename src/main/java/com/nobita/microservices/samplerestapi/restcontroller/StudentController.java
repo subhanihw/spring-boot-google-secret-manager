@@ -37,7 +37,7 @@ public class StudentController {
             return res.get();
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public ResponseEntity<Student> addStudent(@Valid @RequestBody AddStudentDTO student) {
         Student student1 = new Student();
         student1.setBranch(student.getBranch());

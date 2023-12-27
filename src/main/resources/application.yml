@@ -4,12 +4,14 @@ spring:
       config:
         enabled: true
       sql:
-        database-name: students
-        instance-connection-name: nobita-gcp-project:us-central1:students-postgresql-instance
+        database-name: ${sm://db-name}
+        instance-connection-name: ${sm://instance-connection-name}
       project-id: nobita-gcp-project
+  config:
+    import: "sm://"
   datasource:
-    password: students-instance-password
-    username: postgres
+    password: ${sm://datasource-password}
+    username: ${sm://datasource-username}
   jpa:
     database: POSTGRESQL
     properties:

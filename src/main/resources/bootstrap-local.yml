@@ -1,0 +1,6 @@
+spring:
+  cloud:
+    gcp:
+      secretmanager:
+        credentials:
+          location: file:C:\Users\SAILS-DM273\Desktop\nobita-gcp-project-dfaf6663eeed.json
