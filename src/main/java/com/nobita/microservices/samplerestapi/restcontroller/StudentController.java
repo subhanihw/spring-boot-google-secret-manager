@@ -7,8 +7,10 @@ import com.nobita.microservices.samplerestapi.services.StudentService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.io.IOException;
 import java.net.URI;
 import java.util.List;
 import java.util.Optional;
@@ -61,5 +63,10 @@ public class StudentController {
         else {
             service.deleteStudentById(id);
         }
+    }
+
+    @PostMapping("/uploadFile")
+    public void uploadFile(@RequestParam("file")MultipartFile file) throws IOException {
+        service.saveFileToGC(file);
     }
 }
